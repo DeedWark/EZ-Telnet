@@ -26,7 +26,7 @@ read -r -p "To: " to
 read -r -p "Date (leave empty for current date): " date
 read -r -p "Subject: " subject
 read -r -p "Message-ID (leave empty for random or type 0 for none): " mid
-read -r -p "Mailer (leave empty for put this one or type 0 for none): " xm
+read -r -p "Mailer (leave empty to put this one or type 0 for none): " xm
 
 if [ -z "$from" ]; then
 	from="$mfrom"
