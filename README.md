@@ -20,5 +20,5 @@ To: You
 Date (leave empty for current date):
 Subject: Mail
 Message-ID (leave empty for random or type 0 for none):
-Mailer (leave empty for put this one or type 0 for none):
+Mailer (leave empty to put this one or type 0 for none):
 ```
