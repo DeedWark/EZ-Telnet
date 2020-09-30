@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#Kenji DURIEZ - 2020
+#Kenji DURIEZ - [DeedWark] 2020
 #This script will perform TELNET in a sec
 
 RED='\033[1;31m'
