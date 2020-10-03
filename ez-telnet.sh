@@ -28,24 +28,12 @@ read -r -p "Subject: " subject
 read -r -p "Message-ID (leave empty for random or type 0 for none): " mid
 read -r -p "Mailer (leave empty to put this one or type 0 for none): " xm
 
-if [ -z "$from" ]; then
-	from="$mfrom"
-fi
-
-if [ -z "$to" ]; then
-	to="$rto"
-fi
-
-if [ -z "$date" ]; then
-	curdate="$(date)"
-fi
-
-if [ -z "$subject" ]; then
-	subject=""
-fi
+[[ -z "$from" ]] && from="$mfrom"
+[[ -z "$to" ]] && to="$rto"
+[[ -z "$date" ]] && curdate="$(date)"
+[[ -z "$subject" ]] && subject=""
 
 { 
-	echo "EHLO ${helo}";
 	echo "EHLO ${helo}";
 	echo "MAIL FROM:<${mfrom}>";
 	echo "RCPT TO:<${rto}>";
@@ -55,7 +43,7 @@ fi
 	echo "From: ${from}";
 	echo "Subject: ${subject}";
 	if [ -z "$mid" ]; then
-		echo "Message-Id: <$(date|tr -d ' :[a-z][A-Z]').$(shuf -i 1000-9999 -n 1)@$(hostname).thisdomain>" 
+		echo "Message-Id: <$(date -R|tr -d ' ,+():[a-z][A-Z]').$(shuf -i 1000-9999 -n 1)@$(hostname).thisdomain>" 
 	elif [ "$mid" == "0" ]; then
 		: 
 	fi;
